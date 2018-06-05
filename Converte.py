@@ -20,14 +20,12 @@ import platform
 def separa(string, ch):
     j = 8
     k = 0
-    i = 0
     nstr = ''
     for i in range(int(len(string) / 8)):
         nstr = nstr + (string[k:j] + ch)
         
         k += 8
         j += 8
-        i += 1
     #w = nstr[:len(nstr) - 1]
     return nstr
 
