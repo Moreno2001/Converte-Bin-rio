@@ -528,7 +528,7 @@ class Program:
         return string
 
     # =============================================================================================================*#
-    # *  As três funções a seguir são de origens externas, mas fiz algumas alterações para adaptá-las ao programa  *#
+    # *                             Funções que Convertem de Binário pra Strings e vice-versa                      *#
     # *============================================================================================================*#
 
     def binstr(self, bits, encoding='latin-1', errors='surrogatepass'):
