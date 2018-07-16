@@ -496,33 +496,15 @@ class Program:
         self.entrada.insert(tkinter.END, text + '')
 
     def funcinv(self, string):
-        string = string.replace('0' * 26, 'Z')
-        string = string.replace('0' * 25, 'Y')
-        string = string.replace('0' * 24, 'X')
-        string = string.replace('0' * 23, 'W')
-        string = string.replace('0' * 22, 'V')
-        string = string.replace('0' * 21, 'U')
-        string = string.replace('0' * 20, 'T')
-        string = string.replace('0' * 19, 'S')
-        string = string.replace('0' * 18, 'R')
-        string = string.replace('0' * 17, 'Q')
-        string = string.replace('0' * 16, 'P')
-        string = string.replace('0' * 15, 'O')
-        string = string.replace('0' * 14, 'N')
-        string = string.replace('0' * 13, 'M')
-        string = string.replace('0' * 12, 'L')
-        string = string.replace('0' * 11, 'K')
-        string = string.replace('0' * 10, 'J')
-        string = string.replace('0' * 9, 'I')
-        string = string.replace('0' * 8, 'H')
-        string = string.replace('0' * 7, 'G')
-        string = string.replace('0' * 6, 'F')
-        string = string.replace('0' * 5, 'E')
-        string = string.replace('0' * 4, 'D')
-        string = string.replace('0' * 3, 'C')
-        string = string.replace('0' * 2, 'B')
-        string = string.replace('0', 'A')
-        return string
+        j = 25
+        i = 26
+        abcdário = 'abcdefghijklmnopqrstuvwxyz'
+        while i > 0:
+            string = string.replace('0' * i, abcdário[j])
+            j -= 1
+            i -= 1
+            
+        return string.upper()
 
     # =============================================================================================================*#
     # *                             Funções que Convertem de Binário pra Strings e vice-versa                      *#
