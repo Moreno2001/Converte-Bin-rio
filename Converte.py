@@ -383,92 +383,19 @@ class Program:
         # convert: função para o botão descodificar
 
     def convert(self, param=None):
-        text = self.entrada.get(0.0, tkinter.END)  # Dando o valor encontrado no Text de entrada numa var. text
-        text = text.lower()# transformando toda string em minúsculo
+       text = self.entrada.get(0.0, tkinter.END)  # Dando o valor encontrado no Text de entrada numa var. text
+       text = text.lower()# transformando toda string em minúsculo
         
-        outstr = str()
-        for i in text:
-            if (i == 'a'):
-                outstr = '0'
-                text = text.replace(i, outstr)
-            elif (i == 'b'):
-                outstr = '0' * 2
-                text = text.replace(i, outstr)
-            elif (i == 'c'):
-                outstr = '0' * 3
-                text = text.replace(i, outstr)
-            elif (i == 'd'):
-                outstr = '0' * 4
-                text = text.replace(i, outstr)
-            elif (i == 'e'):
-                outstr = '0' * 5
-                text = text.replace(i, outstr)
-            elif (i == 'f'):
-                outstr = '0' * 6
-                text = text.replace(i, outstr)
-            elif (i == 'g'):
-                outstr = '0' * 7
-                text = text.replace(i, outstr)
-            elif (i == 'h'):
-                outstr = '0' * 8
-                text = text.replace(i, outstr)
-            elif (i == 'i'):
-                outstr = '0' * 9
-                text = text.replace(i, outstr)
-            elif (i == 'j'):
-                outstr = '0' * 10
-                text = text.replace(i, outstr)
-            elif (i == 'k'):
-                outstr = '0' * 11
-                text = text.replace(i, outstr)
-            elif (i == 'l'):
-                outstr = '0' * 12
-                text = text.replace(i, outstr)
-            elif (i == 'm'):
-                outstr = '0' * 13
-                text = text.replace(i, outstr)
-            elif (i == 'n'):
-                outstr = '0' * 14
-                text = text.replace(i, outstr)
-            elif (i == 'o'):
-                outstr = '0' * 15
-                text = text.replace(i, outstr)
-            elif (i == 'p'):
-                outstr = '0' * 16
-                text = text.replace(i, outstr)
-            elif (i == 'q'):
-                outstr = '0' * 17
-                text = text.replace(i, outstr)
-            elif (i == 'r'):
-                outstr = '0' * 18
-                text = text.replace(i, outstr)
-            elif (i == 's'):
-                outstr = '0' * 19
-                text = text.replace(i, outstr)
-            elif (i == 't'):
-                outstr = '0' * 20
-                text = text.replace(i, outstr)
-            elif (i == 'u'):
-                outstr = '0' * 21
-                text = text.replace(i, outstr)
-            elif (i == 'v'):
-                outstr = '0' * 22
-                text = text.replace(i, outstr)
-            elif (i == 'w'):
-                outstr = '0' * 23
-                text = text.replace(i, outstr)
-            elif (i == 'x'):
-                outstr = '0' * 24
-                text = text.replace(i, outstr)
-            elif (i == 'y'):
-                outstr = '0' * 25
-                text = text.replace(i, outstr)
-            elif (i == 'z'):
-                outstr = '0' * 26
-                text = text.replace(i, outstr)
+       outstr = str()
+       for i in text:
+            if i.isalpha():
+                idx = ord(i) - ord('a') + 1
+                outstr += bin(idx)[2:].zfill(26)
             else:
-                pass
+                outstr += i
 
+        return outstr
+ 
         self.saida.delete(0.0, tkinter.END)
 
         text = text.replace('\n', '')
