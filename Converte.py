@@ -393,18 +393,15 @@ class Program:
                 outstr += bin(idx)[2:].zfill(26)
             else:
                 outstr += i
+    
+       self.saida.delete(0.0, tkinter.END)
 
-        return outstr
- 
-        self.saida.delete(0.0, tkinter.END)
+       text = text.replace('\n', '')
+       text = str(self.binstr(text))
 
-        text = text.replace('\n', '')
-
-        text = str(self.binstr(text))
-
-        text = text.replace('\n', '')
+       text = text.replace('\n', '')
         
-        self.saida.insert(tkinter.END, text + '')  # Passando o texto já convertido para Text de saída
+       self.saida.insert(tkinter.END, text + '')  # Passando o texto já convertido para Text de saída
 
     def invert(self):
         text = self.saida.get(0.0, tkinter.END)
